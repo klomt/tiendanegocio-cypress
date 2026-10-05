@@ -1,0 +1,28 @@
+{
+  "name": "pruebas-cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prisma-config": "ts-node prisma.config.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/adapter-mariadb": "^7.8.0",
+    "@prisma/client": "^7.8.0",
+    "dotenv": "^17.4.2",
+    "murmurhash3js": "^3.0.1",
+    "mysql2": "^3.23.3",
+    "node-cron": "^4.6.0",
+    "prisma": "^7.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.0",
+    "cypress": "^15.18.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  }
+}

@@ -1,0 +1,33 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+// Representa el resultado global de una ejecución de pruebas.
+// Cada registro de run puede contener varios registros de test_result asociados.
+model run {
+  id       Int          @id @default(autoincrement())
+  run      String
+  estado   String
+  duracion Float
+  fecha    DateTime
+  tests    test[]
+}
+
+model test {
+  id Int @id @default(autoincrement())
+  runId Int
+  test String
+  estado String
+  duracion Float
+  error String? @db.Text
+  run run @relation(fields: [runId], references: [id], onDelete: Cascade)
+}
